@@ -1,0 +1,5 @@
+# Project Files
+/.idea
+/tests/output/*
+/venv
+*/__pycache__
