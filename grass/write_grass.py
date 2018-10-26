@@ -14,7 +14,7 @@ def compile_grass(data: list) -> bytes:
     for index in range(4096):
         grass_binary += struct.pack(
             '<4B',
-            data[index].height,
+            round(data[index].height * 255),
             data[index].r,
             data[index].g,
             data[index].b

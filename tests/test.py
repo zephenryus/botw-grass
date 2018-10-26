@@ -55,11 +55,20 @@ def grass_to_binary_file():
         filecmp.cmp("assets/5000000000.grass.extm", "output/5000000000.grass.extm")))
 
 
+def grass_to_image():
+    """
+    Tests reading data from grass file then generating height and color map images
+    """
+    data = grass.read_grass("assets/5000000000.grass.extm")
+    grass.generate_height_map(data, 'output/5000000000.grass.extm.height.tiff')
+    grass.generate_color_map(data, 'output/5000000000.grass.extm.color.tiff')
+
+
 def main():
     grass_to_json()
     grass_to_binary_string()
     grass_to_binary_file()
-    # grass_to_image()
+    grass_to_image()
 
 
 if __name__ == "__main__":

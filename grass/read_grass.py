@@ -23,7 +23,7 @@ def read_grass(path: str, verbose=False) -> list:
             for _ in range(4096):
                 height, r, g, b = struct.unpack('<4B', infile.read(4))
                 grass_array.append(Grass(
-                    height,
+                    height / 255,
                     r,
                     g,
                     b
